@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <h1>My Blog / Notes</h1>
+  <header>
+    <h1>📘 My Blog / Notes</h1>
+    <input type="text" id="search" placeholder="Search notes...">
+  </header>
 
   <div class="blog-container">
 
     <div class="blog-card">
       <h2>Edge AI Basics</h2>
       <p>Introduction to Edge AI and its applications...</p>
-      <a href="post1.html">Read More</a>
+      <a href="post1.html">Read More →</a>
     </div>
 
     <div class="blog-card">
       <h2>IoT Architecture</h2>
       <p>Understanding IoT layers and devices...</p>
-      <a href="post2.html">Read More</a>
+      <a href="post2.html">Read More →</a>
     </div>
 
   </div>
+
+<script>
+document.getElementById("search").addEventListener("keyup", function() {
+  let value = this.value.toLowerCase();
+  let cards = document.querySelectorAll(".blog-card");
+
+  cards.forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(value) ? "block" : "none";
+  });
+});
+</script>
 
 </body>
 </html>
