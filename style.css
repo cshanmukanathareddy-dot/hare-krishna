@@ -1,26 +1,33 @@
-/* ===== Google Font ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* ===== GLOBAL ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #f4f7fb;
+    background: linear-gradient(to right, #eef2ff, #f8fafc);
     color: #1e293b;
 }
 
-/* ===== Header ===== */
+/* ===== HEADER ===== */
 header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: linear-gradient(135deg, #0f172a, #1e40af);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 header h1 {
-    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-/* ===== Navbar ===== */
+/* ===== NAVBAR ===== */
 nav {
     margin-top: 10px;
 }
@@ -30,47 +37,83 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: white;
+nav a:hover,
+nav a.active {
+    color: #ffffff;
     border-bottom: 2px solid #38bdf8;
 }
 
-/* ===== Sections ===== */
+/* ===== SECTIONS ===== */
 .content {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
 h2 {
+    font-size: 26px;
     color: #1e3a8a;
+    margin-bottom: 15px;
 }
 
-/* ===== Cards ===== */
+p {
+    color: #475569;
+}
+
+/* ===== SEARCH BAR ===== */
+input {
+    width: 60%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    margin: 25px 0;
+    outline: none;
+}
+
+/* ===== CARD GRID ===== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 
+/* ===== CARD ===== */
 .card {
     background: white;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* top color bar */
+.card::before {
+    content: "";
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ===== Button ===== */
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* ===== BUTTON ===== */
 .button {
     display: inline-block;
     margin-top: 15px;
@@ -79,16 +122,39 @@ h2 {
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .button:hover {
     background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
 }
 
-/* ===== Footer ===== */
+/* ===== FEATURE BOX ===== */
+.feature {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== FOOTER ===== */
 footer {
     background: #0f172a;
     color: #cbd5f5;
     text-align: center;
-    padding: 15px;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    input {
+        width: 90%;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
 }
