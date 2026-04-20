@@ -2,12 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topics - NovaTech Hub</title>
-    <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #1e293b;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #cbd5f5;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* SECTION */
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        /* CARD GRID */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        /* BUTTON */
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+        }
+
+        /* FEATURE BOX */
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: #cbd5f5;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -20,46 +133,76 @@
     </nav>
 </header>
 
-<!-- Intro Section -->
+<!-- INTRO -->
 <section class="content">
     <h2>Browse Categories</h2>
-    <p>
-        Explore a wide range of topics designed to keep you updated with the latest trends 
-        in technology and beyond.
-    </p>
+    <p>Explore trending technologies and expand your knowledge.</p>
 </section>
 
-<!-- Categories List -->
+<!-- CARDS -->
 <section class="content">
+
     <h2>🔥 Popular Topics</h2>
 
-    <ul>
-        <li><a href="#">🤖 Artificial Intelligence</a></li>
-        <li><a href="#">💻 Web Development</a></li>
-        <li><a href="#">📱 Mobile Technology</a></li>
-        <li><a href="#">🚀 Space Exploration</a></li>
-        <li><a href="#">🎮 Gaming</a></li>
-        <li><a href="#">📊 Data Science</a></li>
-    </ul>
+    <div class="cards">
+
+        <div class="card">
+            <h3>🤖 Artificial Intelligence</h3>
+            <p>Machine Learning, Deep Learning, NLP, and AI tools.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+        <div class="card">
+            <h3>💻 Web Development</h3>
+            <p>HTML, CSS, JavaScript, React, and backend frameworks.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+        <div class="card">
+            <h3>📱 Mobile Technology</h3>
+            <p>Android, iOS, Flutter, and mobile app development.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Space Exploration</h3>
+            <p>Satellites, rockets, and future space missions.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+        <div class="card">
+            <h3>🎮 Gaming</h3>
+            <p>Game engines, development, and graphics design.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+        <div class="card">
+            <h3>📊 Data Science</h3>
+            <p>Data analysis, visualization, and AI data models.</p>
+            <a href="#" class="button">Explore →</a>
+        </div>
+
+    </div>
+
 </section>
 
-<!-- Featured Section -->
+<!-- FEATURED -->
 <section class="content">
     <h2>⭐ Featured Category</h2>
-    <p>
-        <strong>Artificial Intelligence</strong> is transforming the world with innovations 
-        in automation, deep learning, and smart systems. It is one of the fastest-growing 
-        and most impactful fields today.
-    </p>
+
+    <div class="feature">
+        <h3>Artificial Intelligence</h3>
+        <p>
+            AI is transforming industries through automation, smart systems, 
+            and real-time decision making. It is one of the fastest-growing fields today.
+        </p>
+    </div>
 </section>
 
-<!-- Call to Action -->
+<!-- CTA -->
 <section class="content">
     <h2>🚀 Want to Learn More?</h2>
-    <p>
-        Dive deeper into each topic and expand your knowledge with curated content and updates.
-    </p>
-
+    <p>Dive deeper into each topic and expand your knowledge.</p>
     <a href="contact.html" class="button">Suggest a Topic</a>
 </section>
 
