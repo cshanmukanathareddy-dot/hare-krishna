@@ -1,68 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog / Notes</title>
+<section>
+    <h2>📚 Latest Blogs</h2>
 
-    <!-- ✅ FIXED CSS LINK -->
-    <link rel="stylesheet" href="./style.css">
+    <div class="card-container">
 
-    <!-- ✅ ADD FONT (you forgot this here) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+        <div class="card">
+            <h3>Edge AI Basics</h3>
+            <p>Learn how AI models run on edge devices like mobiles and IoT systems.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
 
-<body>
+        <div class="card">
+            <h3>IoT Architecture</h3>
+            <p>Understand IoT layers including sensors, networks, and cloud systems.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
 
-<!-- Header -->
-<header>
-    <h1>📘 My Blog / Notes</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
-    </nav>
-</header>
+        <div class="card">
+            <h3>Machine Learning Guide</h3>
+            <p>Beginner-friendly guide to ML algorithms, models, and real-world use cases.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
 
-<!-- Search -->
-<div class="content">
-    <input type="text" id="search" placeholder="Search notes..."
-    style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
-</div>
+        <div class="card">
+            <h3>5G Technology</h3>
+            <p>Explore how 5G is transforming communication and enabling smart cities.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
 
-<!-- Blog Section -->
-<div class="blog-container">
+        <div class="card">
+            <h3>Cyber Security Basics</h3>
+            <p>Learn how to protect systems from threats, hacking, and data breaches.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
 
-    <div class="blog-card">
-        <h2>Edge AI Basics</h2>
-        <p>Introduction to Edge AI and its applications...</p>
-        <a href="post1.html">Read More →</a>
+        <div class="card">
+            <h3>Cloud Computing</h3>
+            <p>Understand AWS, Azure, and how cloud services power modern applications.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
+
     </div>
-
-    <div class="blog-card">
-        <h2>IoT Architecture</h2>
-        <p>Understanding IoT layers and devices...</p>
-        <a href="post2.html">Read More →</a>
-    </div>
-
-</div>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 Hareesh | Blog Section</p>
-</footer>
-
-<!-- Search Script -->
-<script>
-document.getElementById("search").addEventListener("keyup", function() {
-    let value = this.value.toLowerCase();
-    let cards = document.querySelectorAll(".blog-card");
-
-    cards.forEach(card => {
-        card.style.display =
-        card.innerText.toLowerCase().includes(value) ? "block" : "none";
-    });
-});
-</script>
-
-</body>
-</html>
+</section>
