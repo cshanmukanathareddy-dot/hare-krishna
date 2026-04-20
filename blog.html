@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Blog</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog / Notes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <header>
+<!-- Header -->
+<header>
     <h1>📘 My Blog / Notes</h1>
-    <input type="text" id="search" placeholder="Search notes...">
-  </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+</header>
 
-  <div class="blog-container">
+<!-- Search -->
+<div style="text-align:center; margin-top:20px;">
+    <input type="text" id="search" placeholder="Search notes..."
+    style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
+</div>
+
+<!-- Blog Section -->
+<div class="blog-container">
 
     <div class="blog-card">
-      <h2>Edge AI Basics</h2>
-      <p>Introduction to Edge AI and its applications...</p>
-      <a href="post1.html">Read More →</a>
+        <h2>Edge AI Basics</h2>
+        <p>Introduction to Edge AI and its applications...</p>
+        <a href="post1.html">Read More →</a>
     </div>
 
     <div class="blog-card">
-      <h2>IoT Architecture</h2>
-      <p>Understanding IoT layers and devices...</p>
-      <a href="post2.html">Read More →</a>
+        <h2>IoT Architecture</h2>
+        <p>Understanding IoT layers and devices...</p>
+        <a href="post2.html">Read More →</a>
     </div>
 
-  </div>
+</div>
 
+<!-- Footer -->
+<footer>
+    <p>© 2026 Hareesh | Blog Section</p>
+</footer>
+
+<!-- Search Script -->
 <script>
 document.getElementById("search").addEventListener("keyup", function() {
-  let value = this.value.toLowerCase();
-  let cards = document.querySelectorAll(".blog-card");
+    let value = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".blog-card");
 
-  cards.forEach(card => {
-    card.style.display =
-      card.innerText.toLowerCase().includes(value) ? "block" : "none";
-  });
+    cards.forEach(card => {
+        card.style.display =
+        card.innerText.toLowerCase().includes(value) ? "block" : "none";
+    });
 });
 </script>
 
