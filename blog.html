@@ -4,29 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Technology Blog | AI, IoT, Cloud | NovaTech Hub</title>
-
-<meta name="description" content="Read blogs on Artificial Intelligence, IoT, Cloud Computing, Cyber Security and latest technology trends.">
-<meta name="keywords" content="AI Blog, IoT Notes, Machine Learning Guide, Cloud Computing, Tech Articles">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="NovaTech Hub Blog">
-<meta property="og:description" content="Learn AI, IoT, Cloud and modern technologies">
-<meta property="og:type" content="website">
+<title>NovaTech Hub Blog</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
     background: linear-gradient(to right, #eef2ff, #f8fafc);
     color: #1e293b;
 }
@@ -36,123 +22,69 @@ header {
     background: linear-gradient(135deg, #0f172a, #1e40af);
     color: white;
     text-align: center;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-nav a {
-    color: #cbd5f5;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav a:hover,
-nav a.active {
-    color: white;
-    border-bottom: 2px solid #38bdf8;
-}
-
-/* SECTION */
-.content {
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 1100px;
-    margin: auto;
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #1e3a8a;
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: #1e3a8a;
-}
-
-p {
-    color: #475569;
+    padding: 20px;
 }
 
 /* SEARCH */
 input {
     width: 60%;
     padding: 12px;
+    margin: 20px auto;
+    display: block;
     border-radius: 10px;
     border: 1px solid #cbd5e1;
-    margin: 25px 0;
 }
 
-/* CARDS */
+/* GRID */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
+/* CARD */
 .card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    cursor: pointer;
     transition: 0.3s;
-    position: relative;
-}
-
-.card::before {
-    content: "";
-    height: 5px;
-    width: 100%;
-    background: linear-gradient(90deg, #2563eb, #38bdf8);
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    background: #e0e7ff;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+/* BLOG VIEW */
+#blogView {
+    display: none;
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
 }
 
-.card p {
-    font-size: 14px;
-}
-
-/* BUTTON */
-.button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #2563eb, #38bdf8);
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #2563eb;
     color: white;
-    border-radius: 8px;
-    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.button:hover {
-    background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+button:hover {
+    background: #1d4ed8;
 }
 
 /* FOOTER */
 footer {
+    text-align: center;
+    padding: 15px;
     background: #0f172a;
     color: #cbd5f5;
-    text-align: center;
-    padding: 18px;
-    margin-top: 40px;
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px) {
-    input {
-        width: 90%;
-    }
 }
 </style>
 </head>
@@ -160,90 +92,82 @@ footer {
 <body>
 
 <header>
-    <h1>🚀 NovaTech Hub</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="categories.html">Topics</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<h1>🚀 NovaTech Hub Blogs</h1>
 </header>
 
-<section class="content">
+<input type="text" id="search" placeholder="Search blogs..." onkeyup="searchBlogs()">
 
-    <h1>Latest Technology Blogs and Tutorials</h1>
+<div class="cards" id="blogList"></div>
 
-    <p>
-        Explore beginner-friendly blogs on Artificial Intelligence, IoT, Cloud Computing,
-        and modern technologies. These articles help students understand concepts easily.
-    </p>
-
-    <input type="text" placeholder="Search notes...">
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Edge AI Basics</h3>
-            <p>
-                Edge AI allows processing data directly on devices like smartphones
-                and IoT systems without relying on cloud servers.
-            </p>
-            <a href="post1.html" class="button">Read More</a>
-        </div>
-
-        <div class="card">
-            <h3>IoT Architecture</h3>
-            <p>
-                IoT consists of layers such as sensors, networks, and cloud,
-                enabling smart automation systems.
-            </p>
-            <a href="post2.html" class="button">Read More</a>
-        </div>
-
-        <div class="card">
-            <h3>Machine Learning Guide</h3>
-            <p>
-                Learn how machines learn from data using algorithms,
-                models, and real-world applications.
-            </p>
-            <a href="#" class="button">Read More</a>
-        </div>
-
-        <div class="card">
-            <h3>5G Technology</h3>
-            <p>
-                Understand how 5G improves speed, connectivity,
-                and enables smart cities and IoT systems.
-            </p>
-            <a href="#" class="button">Read More</a>
-        </div>
-
-        <div class="card">
-            <h3>Cyber Security Basics</h3>
-            <p>
-                Learn how to protect systems from hacking,
-                malware, and cyber threats.
-            </p>
-            <a href="#" class="button">Read More</a>
-        </div>
-
-        <div class="card">
-            <h3>Cloud Computing</h3>
-            <p>
-                Cloud platforms like AWS and Azure provide scalable
-                storage and computing solutions.
-            </p>
-            <a href="#" class="button">Read More</a>
-        </div>
-
-    </div>
-
-</section>
+<div id="blogView">
+    <button onclick="goBack()">⬅ Back</button>
+    <h2 id="blogTitle"></h2>
+    <p id="blogContent"></p>
+</div>
 
 <footer>
-    <p>© 2026 NovaTech Hub | Blog</p>
+<p>© 2026 NovaTech Hub</p>
 </footer>
+
+<script>
+
+const blogs = [
+{title:"Edge AI Basics", content:"Edge AI allows data processing directly on devices like smartphones and IoT systems without cloud dependency. It improves speed and privacy."},
+{title:"IoT Architecture", content:"IoT includes sensors, network layer, and cloud. These layers help devices communicate and automate systems."},
+{title:"Machine Learning Guide", content:"Machine learning enables systems to learn from data using algorithms like regression and classification."},
+{title:"Deep Learning", content:"Deep learning uses neural networks to process complex patterns such as images and speech."},
+{title:"5G Technology", content:"5G provides ultra-fast internet speeds, low latency, and supports smart cities and IoT."},
+{title:"Cyber Security Basics", content:"Cyber security protects systems from hacking, malware, and unauthorized access."},
+{title:"Cloud Computing", content:"Cloud platforms like AWS and Azure allow scalable storage and computing services."},
+{title:"Big Data", content:"Big data involves processing large datasets using Hadoop and Spark technologies."},
+{title:"Blockchain", content:"Blockchain is a decentralized ledger used in cryptocurrencies and secure transactions."},
+{title:"Data Science", content:"Data science uses statistics and machine learning to extract insights from data."},
+{title:"AI in Healthcare", content:"AI helps diagnose diseases, predict outcomes, and improve patient care."},
+{title:"Smart Cities", content:"Smart cities use IoT to improve traffic, energy, and infrastructure."},
+{title:"AR/VR", content:"Augmented and Virtual Reality create immersive digital experiences."},
+{title:"Quantum Computing", content:"Quantum computing uses qubits to solve complex problems faster."},
+{title:"Robotics", content:"Robots automate tasks in industries and daily life."},
+{title:"Edge Computing", content:"Edge computing processes data closer to the source instead of cloud."},
+{title:"DevOps", content:"DevOps combines development and operations for faster delivery."},
+{title:"API Basics", content:"APIs allow communication between different software systems."},
+{title:"Web Development", content:"Web development involves building websites using HTML, CSS, and JavaScript."},
+{title:"Mobile App Development", content:"Mobile apps are built for Android and iOS platforms."}
+];
+
+function displayBlogs(data){
+    const container = document.getElementById("blogList");
+    container.innerHTML = "";
+    data.forEach((blog,i)=>{
+        container.innerHTML += `
+        <div class="card" onclick="openBlog(${i})">
+            <h3>${blog.title}</h3>
+            <p>${blog.content.substring(0,80)}...</p>
+        </div>`;
+    });
+}
+
+function searchBlogs(){
+    const value = document.getElementById("search").value.toLowerCase();
+    const filtered = blogs.filter(b=>b.title.toLowerCase().includes(value));
+    displayBlogs(filtered);
+}
+
+function openBlog(index){
+    document.getElementById("blogList").style.display="none";
+    document.getElementById("blogView").style.display="block";
+
+    document.getElementById("blogTitle").innerText = blogs[index].title;
+    document.getElementById("blogContent").innerText = blogs[index].content;
+}
+
+function goBack(){
+    document.getElementById("blogView").style.display="none";
+    document.getElementById("blogList").style.display="grid";
+}
+
+displayBlogs(blogs);
+
+</script>
 
 </body>
 </html>
