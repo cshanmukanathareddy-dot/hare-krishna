@@ -10,37 +10,56 @@
 
 <style>
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
     background: #eef2f7;
-    color: #1e293b;
 }
 
-/* HEADER */
+/* ===== NAVBAR ===== */
 header {
     background: linear-gradient(135deg, #0f172a, #1e40af);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
+nav a {
+    color: #cbd5f5;
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+nav a.active {
+    border-bottom: 2px solid #38bdf8;
+}
+
+/* ===== TITLE ===== */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    color: #1e3a8a;
+}
+
+.hero p {
+    color: #475569;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* SEARCH */
 .search-box {
-    width: 60%;
-    margin: 30px auto;
-    display: block;
+    width: 50%;
+    margin: 25px auto;
     padding: 14px;
     border-radius: 12px;
     border: 1px solid #cbd5e1;
-    font-size: 16px;
+    display: block;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -48,39 +67,65 @@ header h1 {
     padding: 40px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card {
-    background: #ffffff;
-    border-radius: 20px;
+    background: white;
     padding: 25px;
-    text-align: left;
+    border-radius: 20px;
+    text-align: center;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
 }
 
+/* TOP BLUE LINE */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* HOVER EFFECT */
 .card:hover {
-    transform: translateY(-8px);
-    background: #e0e7ff;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
 }
 
-/* 🔵 BLUE HEADING STYLE */
+/* TITLE */
 .card h3 {
-    display: inline-block;
-    background: #2563eb;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    margin-bottom: 12px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
+/* TEXT */
 .card p {
     font-size: 14px;
     color: #475569;
 }
 
-/* BLOG VIEW */
+/* BUTTON */
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+}
+
+/* ===== BLOG VIEW ===== */
 #blogView {
     display: none;
     max-width: 800px;
@@ -88,34 +133,15 @@ header h1 {
     padding: 30px;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-#blogView h2 {
-    margin-bottom: 15px;
-}
-
-.back-btn {
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    border: none;
+.back {
+    padding: 10px;
     background: #2563eb;
     color: white;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-}
-
-.back-btn:hover {
-    background: #1d4ed8;
-}
-
-/* FOOTER */
-footer {
-    background: #0f172a;
-    color: #cbd5f5;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
 }
 
 /* MOBILE */
@@ -130,73 +156,82 @@ footer {
 <body>
 
 <header>
-    <h1>🚀 NovaTech Hub Blogs</h1>
+    <h2>🚀 NovaTech Hub</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="categories.html">Topics</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
-<input type="text" class="search-box" id="search" placeholder="Search blogs..." onkeyup="searchBlogs()">
+<section class="hero">
+    <h1>Latest Technology Blogs and Tutorials</h1>
+    <p>Explore beginner-friendly blogs on Artificial Intelligence, IoT, Cloud Computing, and modern technologies.</p>
+</section>
+
+<input type="text" class="search-box" id="search" placeholder="Search notes..." onkeyup="searchBlogs()">
 
 <div class="cards" id="blogList"></div>
 
 <div id="blogView">
-    <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    <h2 id="blogTitle"></h2>
-    <p id="blogContent"></p>
+    <button class="back" onclick="goBack()">⬅ Back</button>
+    <h2 id="title"></h2>
+    <p id="content"></p>
 </div>
-
-<footer>
-    <p>© 2026 NovaTech Hub</p>
-</footer>
 
 <script>
 
 const blogs = [
-{title:"Edge AI Basics", content:"Edge AI allows data processing directly on devices like smartphones and IoT systems. It reduces latency and improves privacy."},
-{title:"IoT Architecture", content:"IoT architecture consists of sensors, networks, and cloud systems enabling connected devices."},
-{title:"Machine Learning Guide", content:"Machine learning allows systems to learn from data using algorithms like regression and classification."},
-{title:"Deep Learning", content:"Deep learning uses neural networks to process complex data such as images and speech."},
-{title:"5G Technology", content:"5G provides ultra-fast speeds, low latency, and supports smart cities."},
-{title:"Cyber Security Basics", content:"Cyber security protects systems from hacking, malware, and data breaches."},
-{title:"Cloud Computing", content:"Cloud platforms like AWS and Azure offer scalable computing resources."},
-{title:"Big Data", content:"Big data technologies like Hadoop and Spark handle large datasets efficiently."},
-{title:"Blockchain", content:"Blockchain is a decentralized system used in cryptocurrencies and secure transactions."},
-{title:"Data Science", content:"Data science extracts insights using statistics and machine learning."},
-{title:"AI in Healthcare", content:"AI helps in diagnosis, treatment planning, and patient care."},
-{title:"Smart Cities", content:"Smart cities use IoT for better infrastructure and traffic management."},
-{title:"AR/VR", content:"AR and VR create immersive digital experiences."},
-{title:"Quantum Computing", content:"Quantum computing solves complex problems using qubits."},
-{title:"Robotics", content:"Robotics automates industrial and daily tasks."},
-{title:"Edge Computing", content:"Edge computing processes data near the source instead of cloud."},
-{title:"DevOps", content:"DevOps improves software delivery speed and reliability."},
-{title:"API Basics", content:"APIs enable communication between software applications."},
-{title:"Web Development", content:"Web development uses HTML, CSS, JS to build websites."},
-{title:"Mobile App Development", content:"Mobile apps are developed for Android and iOS platforms."}
+{title:"Edge AI Basics",content:"Edge AI processes data on devices without cloud dependency."},
+{title:"IoT Architecture",content:"IoT includes sensors, networks, and cloud layers."},
+{title:"Machine Learning Guide",content:"ML enables systems to learn from data."},
+{title:"5G Technology",content:"5G offers high speed and low latency."},
+{title:"Cyber Security Basics",content:"Protect systems from cyber threats."},
+{title:"Cloud Computing",content:"Cloud platforms provide scalable resources."},
+{title:"Big Data",content:"Big data handles massive datasets."},
+{title:"Blockchain",content:"Blockchain ensures secure transactions."},
+{title:"Data Science",content:"Extract insights using data analysis."},
+{title:"AI in Healthcare",content:"AI improves diagnosis and treatment."},
+{title:"Smart Cities",content:"IoT enables smart infrastructure."},
+{title:"AR/VR",content:"Creates immersive experiences."},
+{title:"Quantum Computing",content:"Solves complex problems faster."},
+{title:"Robotics",content:"Automates tasks efficiently."},
+{title:"DevOps",content:"Improves development workflow."},
+{title:"API Basics",content:"APIs connect applications."},
+{title:"Web Development",content:"Build websites using HTML CSS JS."},
+{title:"Mobile Apps",content:"Develop Android & iOS apps."},
+{title:"Edge Computing",content:"Process data near source."},
+{title:"AI Tools",content:"Modern tools for AI development."}
 ];
 
 function displayBlogs(data){
-    const container = document.getElementById("blogList");
+    let container = document.getElementById("blogList");
     container.innerHTML = "";
 
     data.forEach((blog,i)=>{
         container.innerHTML += `
-        <div class="card" onclick="openBlog(${i})">
+        <div class="card">
             <h3>${blog.title}</h3>
-            <p>${blog.content.substring(0,90)}...</p>
+            <p>${blog.content}</p>
+            <a class="button" onclick="openBlog(${i})">Read More</a>
         </div>`;
     });
 }
 
 function searchBlogs(){
-    const value = document.getElementById("search").value.toLowerCase();
-    const filtered = blogs.filter(b=>b.title.toLowerCase().includes(value));
+    let val = document.getElementById("search").value.toLowerCase();
+    let filtered = blogs.filter(b => b.title.toLowerCase().includes(val));
     displayBlogs(filtered);
 }
 
-function openBlog(index){
+function openBlog(i){
     document.getElementById("blogList").style.display="none";
     document.getElementById("blogView").style.display="block";
 
-    document.getElementById("blogTitle").innerText = blogs[index].title;
-    document.getElementById("blogContent").innerText = blogs[index].content;
+    document.getElementById("title").innerText = blogs[i].title;
+    document.getElementById("content").innerText = blogs[i].content;
 }
 
 function goBack(){
