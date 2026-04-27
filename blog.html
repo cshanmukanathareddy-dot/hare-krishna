@@ -112,31 +112,240 @@ header {
 
 /* BLOG DATA (FULL CONTENT HERE) */
 const blogs = [
+
 {
 title:"Edge AI Basics",
-content:`<p>Edge AI is a revolutionary approach where artificial intelligence runs directly on devices instead of cloud servers.</p>
-<p>This reduces latency and enables real-time processing, making it ideal for applications like smart cameras, autonomous vehicles, and healthcare monitoring.</p>
-<p>Unlike traditional AI systems, Edge AI improves privacy because data is processed locally.</p>
-<p>Technologies like TensorFlow Lite and NVIDIA Jetson are widely used in Edge AI.</p>
-<p>This technology is growing rapidly and is considered the future of intelligent systems.</p>`
+content:`
+<h3>Introduction</h3>
+<p>Edge AI refers to deploying artificial intelligence models directly on devices like smartphones, IoT sensors, and cameras instead of relying on cloud servers. This allows faster processing and real-time decision-making.</p>
+
+<h3>Why Edge AI Matters</h3>
+<p>Traditional AI systems send data to the cloud, which creates delays and privacy risks. Edge AI solves this by processing data locally, reducing latency and improving efficiency.</p>
+
+<h3>Applications</h3>
+<ul>
+<li>Smart surveillance systems</li>
+<li>Autonomous vehicles</li>
+<li>Healthcare monitoring devices</li>
+</ul>
+
+<p>Edge AI is becoming a critical technology for building faster, smarter systems.</p>
+`
+},
+
+{
+title:"IoT Architecture",
+content:`
+<h3>Overview</h3>
+<p>IoT architecture defines how connected devices communicate and exchange data. It enables smart environments like smart homes and smart cities.</p>
+
+<h3>Layers of IoT</h3>
+<ul>
+<li>Perception Layer – sensors and devices</li>
+<li>Network Layer – communication</li>
+<li>Processing Layer – data analysis</li>
+<li>Application Layer – user interface</li>
+</ul>
+
+<h3>Importance</h3>
+<p>IoT architecture ensures scalability and efficient data handling across systems.</p>
+`
 },
 
 {
 title:"Machine Learning Guide",
-content:`<p>Machine Learning allows systems to learn from data and improve automatically.</p>
-<p>There are three main types: supervised, unsupervised, and reinforcement learning.</p>
-<p>ML is used in recommendation systems, fraud detection, and AI chatbots.</p>
-<p>Popular tools include Python, TensorFlow, and Scikit-learn.</p>
-<p>Machine learning is one of the most important technologies today.</p>`
+content:`
+<h3>Introduction</h3>
+<p>Machine Learning is a branch of AI that enables systems to learn from data and improve performance without explicit programming.</p>
+
+<h3>Types</h3>
+<ul>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+<li>Reinforcement Learning</li>
+</ul>
+
+<h3>Applications</h3>
+<p>Used in recommendation systems, fraud detection, and predictive analytics.</p>
+`
 },
 
 {
 title:"Cloud Computing",
-content:`<p>Cloud computing provides computing services over the internet instead of local systems.</p>
-<p>It includes services like storage, servers, and databases.</p>
-<p>Popular cloud providers include AWS, Azure, and Google Cloud.</p>
-<p>Cloud computing is scalable, cost-effective, and flexible.</p>
-<p>It plays a key role in modern digital applications.</p>`
+content:`
+<h3>Definition</h3>
+<p>Cloud computing provides computing services like storage and servers over the internet.</p>
+
+<h3>Service Models</h3>
+<ul>
+<li>IaaS</li>
+<li>PaaS</li>
+<li>SaaS</li>
+</ul>
+
+<h3>Benefits</h3>
+<p>Scalability, flexibility, and cost efficiency make cloud computing essential.</p>
+`
+},
+
+{
+title:"Cyber Security Basics",
+content:`
+<h3>Introduction</h3>
+<p>Cybersecurity protects systems from digital threats like malware and phishing.</p>
+
+<h3>Key Practices</h3>
+<ul>
+<li>Use strong passwords</li>
+<li>Enable two-factor authentication</li>
+<li>Update software regularly</li>
+</ul>
+
+<p>Cybersecurity is critical in today’s connected world.</p>
+`
+},
+
+{
+title:"Big Data",
+content:`
+<h3>Overview</h3>
+<p>Big Data refers to large datasets that require advanced tools for processing.</p>
+
+<h3>Characteristics</h3>
+<ul>
+<li>Volume</li>
+<li>Velocity</li>
+<li>Variety</li>
+</ul>
+
+<h3>Use Cases</h3>
+<p>Used in analytics, recommendations, and business intelligence.</p>
+`
+},
+
+{
+title:"Blockchain",
+content:`
+<h3>Introduction</h3>
+<p>Blockchain is a decentralized ledger that records transactions securely.</p>
+
+<h3>Features</h3>
+<ul>
+<li>Transparency</li>
+<li>Security</li>
+<li>Immutability</li>
+</ul>
+
+<p>It is widely used in cryptocurrency and supply chains.</p>
+`
+},
+
+{
+title:"Web Development",
+content:`
+<h3>Overview</h3>
+<p>Web development involves building websites and applications.</p>
+
+<h3>Components</h3>
+<ul>
+<li>Frontend</li>
+<li>Backend</li>
+<li>Database</li>
+</ul>
+
+<p>It is one of the most in-demand tech skills.</p>
+`
+},
+
+{
+title:"Data Science",
+content:`
+<h3>Introduction</h3>
+<p>Data science extracts insights from structured and unstructured data.</p>
+
+<h3>Tools</h3>
+<p>Python, R, SQL, and visualization tools.</p>
+
+<p>It helps businesses make data-driven decisions.</p>
+`
+},
+
+{
+title:"Artificial Intelligence",
+content:`
+<h3>Overview</h3>
+<p>Artificial Intelligence enables machines to mimic human intelligence.</p>
+
+<h3>Applications</h3>
+<ul>
+<li>Chatbots</li>
+<li>Automation</li>
+<li>Image recognition</li>
+</ul>
+
+<p>AI is transforming industries worldwide.</p>
+`
+},
+
+{
+title:"DevOps",
+content:`
+<h3>Definition</h3>
+<p>DevOps combines development and operations to improve software delivery.</p>
+
+<h3>Benefits</h3>
+<ul>
+<li>Faster deployment</li>
+<li>Better collaboration</li>
+<li>Automation</li>
+</ul>
+
+<p>It is essential in modern software development.</p>
+`
+},
+
+{
+title:"5G Technology",
+content:`
+<h3>Overview</h3>
+<p>5G is the latest mobile network technology offering high speed and low latency.</p>
+
+<h3>Impact</h3>
+<p>Supports IoT, smart devices, and real-time applications.</p>
+`
+},
+
+{
+title:"AR and VR",
+content:`
+<h3>Introduction</h3>
+<p>AR enhances real-world environments, while VR creates virtual experiences.</p>
+
+<h3>Applications</h3>
+<p>Used in gaming, education, and healthcare.</p>
+`
+},
+
+{
+title:"Robotics",
+content:`
+<h3>Overview</h3>
+<p>Robotics focuses on designing intelligent machines.</p>
+
+<h3>Uses</h3>
+<p>Manufacturing, healthcare, and automation.</p>
+`
+},
+
+{
+title:"Quantum Computing",
+content:`
+<h3>Introduction</h3>
+<p>Quantum computing uses qubits to perform complex calculations.</p>
+
+<h3>Importance</h3>
+<p>Solves problems faster than classical computers.</p>
+`
 }
 
 ];
