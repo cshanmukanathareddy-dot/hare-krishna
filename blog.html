@@ -15,7 +15,7 @@ body {
     background: #eef2f7;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 header {
     background: linear-gradient(135deg, #0f172a, #1e40af);
     color: white;
@@ -33,7 +33,7 @@ nav a.active {
     border-bottom: 2px solid #38bdf8;
 }
 
-/* ===== TITLE ===== */
+/* HERO */
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -43,23 +43,7 @@ nav a.active {
     color: #1e3a8a;
 }
 
-.hero p {
-    color: #475569;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* SEARCH */
-.search-box {
-    width: 50%;
-    margin: 25px auto;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #cbd5e1;
-    display: block;
-}
-
-/* ===== GRID ===== */
+/* GRID */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -67,46 +51,18 @@ nav a.active {
     padding: 40px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card {
     background: white;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    position: relative;
     transition: 0.3s;
 }
 
-/* TOP BLUE LINE */
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 6px;
-    width: 100%;
-    background: linear-gradient(90deg, #2563eb, #38bdf8);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-/* HOVER EFFECT */
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-}
-
-/* TITLE */
-.card h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-/* TEXT */
-.card p {
-    font-size: 14px;
-    color: #475569;
 }
 
 /* BUTTON */
@@ -118,38 +74,8 @@ nav a.active {
     color: white;
     border-radius: 10px;
     text-decoration: none;
-    transition: 0.3s;
 }
 
-.button:hover {
-    background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-}
-
-/* ===== BLOG VIEW ===== */
-#blogView {
-    display: none;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 20px;
-}
-
-.back {
-    padding: 10px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .search-box {
-        width: 90%;
-    }
-}
 </style>
 </head>
 
@@ -167,480 +93,133 @@ nav a.active {
 </header>
 
 <section class="hero">
-    <h1>Latest Technology Blogs and Tutorials</h1>
-    <p>Explore beginner-friendly blogs on Artificial Intelligence, IoT, Cloud Computing, and modern technologies.</p>
+    <h1>Latest Technology Topics</h1>
 </section>
 
-<input type="text" class="search-box" id="search" placeholder="Search notes..." onkeyup="searchBlogs()">
+<!-- ✅ CARDS -->
+<div class="cards">
 
-<div class="cards" id="blogList"></div>
-
-<div id="blogView">
-    <button class="back" onclick="goBack()">⬅ Back</button>
-    <h2 id="title"></h2>
-    <p id="content"></p>
+<div class="card">
+<h3>AI Basics</h3>
+<p>Learn fundamentals of Artificial Intelligence.</p>
+<a href="ai-basics.html" class="button">Read More</a>
 </div>
 
-<script>
-
-const blogs = [
-
-{
-title: "Edge AI Basics",
-content: `
-<h3>Introduction</h3>
-<p>Edge AI is a revolutionary technology that enables artificial intelligence models to run directly on local devices such as smartphones, IoT devices, cameras, and embedded systems. Unlike traditional AI systems that rely heavily on cloud computing, Edge AI processes data locally, making systems faster, more secure, and efficient.</p>
-
-<h3>How Edge AI Works</h3>
-<p>Edge AI works by deploying trained machine learning models directly onto hardware devices. These devices collect data through sensors and process it instantly without sending it to a remote server. This reduces latency and ensures real-time decision-making.</p>
-
-<h3>Advantages of Edge AI</h3>
-<p>One major advantage is low latency. Since data is processed locally, there is no delay caused by sending data to the cloud. This is crucial in applications like self-driving cars and industrial automation.</p>
-
-<p>Another advantage is privacy. Sensitive data remains on the device, reducing the risk of data breaches. This is particularly important in healthcare and finance.</p>
-
-<p>Edge AI also reduces bandwidth usage since less data is transmitted over the internet.</p>
-
-<h3>Applications</h3>
-<p>Edge AI is widely used in smart homes, surveillance systems, healthcare devices, and autonomous vehicles. For example, security cameras can detect unusual activity without cloud processing.</p>
-
-<h3>Challenges</h3>
-<p>Despite its advantages, Edge AI faces challenges such as limited processing power and energy constraints. Developers must optimize models to run efficiently on small devices.</p>
-
-<h3>Future Scope</h3>
-<p>The future of Edge AI is promising with advancements in AI chips and hardware acceleration. It will play a key role in smart cities, robotics, and IoT ecosystems.</p>
-
-<p>In conclusion, Edge AI is transforming how AI systems operate by bringing intelligence closer to the data source, enabling faster and more secure processing.</p>
-`
-},
-
-{
-title: "IoT Architecture",
-content: `
-<h3>Introduction</h3>
-<p>The Internet of Things (IoT) architecture is a framework that connects physical devices, sensors, networks, and cloud systems to enable communication and automation. It plays a crucial role in building smart systems.</p>
-
-<h3>Layers of IoT</h3>
-<p>IoT architecture consists of multiple layers:</p>
-
-<h3>1. Perception Layer</h3>
-<p>This layer includes sensors and devices that collect data from the environment such as temperature, motion, and humidity.</p>
-
-<h3>2. Network Layer</h3>
-<p>This layer transfers data from devices to servers using technologies like Wi-Fi, Bluetooth, and 5G.</p>
-
-<h3>3. Processing Layer</h3>
-<p>Also known as the middleware layer, it processes and stores data using cloud platforms.</p>
-
-<h3>4. Application Layer</h3>
-<p>This layer delivers services to users such as smart homes, healthcare systems, and industrial automation.</p>
-
-<h3>Benefits</h3>
-<p>IoT improves efficiency, reduces human effort, and enables real-time monitoring.</p>
-
-<h3>Applications</h3>
-<p>IoT is used in smart cities, agriculture, healthcare, and transportation.</p>
-
-<h3>Challenges</h3>
-<p>Security and data privacy remain major concerns in IoT systems.</p>
-
-<h3>Conclusion</h3>
-<p>IoT architecture is essential for building connected systems that improve quality of life and industrial productivity.</p>
-`
-}
-];
-
-{
-{
-title:"Machine Learning Guide",
-content:`
-
-<h3>Introduction</h3>
-<p>Machine Learning (ML) is a powerful branch of artificial intelligence that enables systems to learn from data and improve their performance without being explicitly programmed. Instead of writing fixed rules, developers train models using data so they can identify patterns, make decisions, and predict outcomes. ML is now a core technology behind many modern applications such as recommendation systems, voice assistants, fraud detection, and self-driving cars.</p>
-
-<p>The rise of big data and computing power has accelerated the adoption of machine learning across industries. Organizations today rely on ML to automate processes, gain insights, and improve efficiency. Whether it is analyzing customer behavior or detecting anomalies, ML provides intelligent solutions that adapt over time.</p>
-
-<h3>Types of Machine Learning</h3>
-<p>Machine learning is broadly divided into three main categories:</p>
-
-<p><strong>1. Supervised Learning:</strong> In this approach, models are trained using labeled data. This means the input data comes with correct outputs. The model learns to map inputs to outputs and can later predict results for new data. Examples include spam detection and image classification.</p>
-
-<p><strong>2. Unsupervised Learning:</strong> Here, models work with unlabeled data and try to find hidden patterns or structures. Clustering and association are common techniques. It is widely used in customer segmentation and recommendation systems.</p>
-
-<p><strong>3. Reinforcement Learning:</strong> This type involves learning through interaction. An agent takes actions in an environment and receives rewards or penalties. Over time, it learns to maximize rewards. It is used in robotics, gaming, and autonomous systems.</p>
-
-<h3>How Machine Learning Works</h3>
-<p>The ML process typically begins with data collection. Data is then cleaned and preprocessed to remove noise and inconsistencies. After that, a suitable algorithm is selected based on the problem type.</p>
-
-<p>The model is trained using historical data and evaluated using test data. Performance metrics such as accuracy, precision, and recall help determine how well the model performs. Finally, the model is deployed into real-world applications where it continues to learn and improve.</p>
-
-<h3>Popular Algorithms</h3>
-<p>Some commonly used machine learning algorithms include linear regression, logistic regression, decision trees, random forests, support vector machines, and neural networks. Deep learning, a subset of ML, uses multi-layered neural networks to handle complex tasks like image recognition and natural language processing.</p>
-
-<h3>Applications of Machine Learning</h3>
-<p>Machine learning has a wide range of applications across industries:</p>
-
-<p>In healthcare, ML helps in disease prediction, medical imaging analysis, and personalized treatment plans. In finance, it is used for fraud detection, risk assessment, and algorithmic trading. In e-commerce, recommendation systems suggest products based on user behavior.</p>
-
-<p>Other applications include speech recognition, natural language processing, chatbots, self-driving cars, and predictive maintenance in industries.</p>
-
-<h3>Benefits of Machine Learning</h3>
-<p>Machine learning offers several advantages:</p>
-
-<p>It automates repetitive tasks, reducing human effort. It improves accuracy by learning from data patterns. It provides predictive insights that help businesses make informed decisions. Additionally, ML systems can adapt to new data, making them more flexible than traditional software.</p>
-
-<h3>Challenges in Machine Learning</h3>
-<p>Despite its benefits, ML comes with challenges. High-quality data is essential, and collecting such data can be difficult. Models may also suffer from bias if the training data is not balanced. Overfitting is another issue where a model performs well on training data but poorly on new data.</p>
-
-<p>Moreover, ML models can be computationally expensive and require significant resources. Interpretability is also a concern, especially in deep learning models where decisions are not always transparent.</p>
-
-<h3>Future of Machine Learning</h3>
-<p>The future of machine learning is promising. With advancements in deep learning, edge AI, and quantum computing, ML systems will become more powerful and efficient. Integration with IoT and 5G will further expand its applications.</p>
-
-<p>Automated machine learning (AutoML) is also emerging, making it easier for non-experts to build ML models. Ethical AI and explainable AI are gaining importance to ensure fairness and transparency.</p>
-
-<h3>Conclusion</h3>
-<p>Machine learning is transforming industries by enabling intelligent systems that learn and adapt. From improving healthcare outcomes to enhancing customer experiences, ML is shaping the future of technology. As tools and techniques continue to evolve, machine learning will become even more integral to solving complex real-world problems.</p>
-
-`
-},
-
-{
-title:"5G Technology",
-content:`
-
-<h3>Introduction</h3>
-<p>5G technology represents the fifth generation of wireless communication, designed to deliver faster speeds, lower latency, and greater connectivity compared to previous generations. It is a key enabler for modern technologies such as IoT, smart cities, autonomous vehicles, and augmented reality.</p>
-
-<p>Unlike 4G, which primarily focused on mobile internet, 5G is built to support a wide range of devices and applications, from smartphones to industrial machines. It aims to create a fully connected world where everything communicates seamlessly.</p>
-
-<h3>Key Features of 5G</h3>
-<p>5G offers several advanced features that set it apart:</p>
-
-<p><strong>High Speed:</strong> 5G can deliver speeds up to 10 Gbps, making it significantly faster than 4G.</p>
-
-<p><strong>Low Latency:</strong> Latency is reduced to as low as 1 millisecond, enabling real-time communication.</p>
-
-<p><strong>Massive Connectivity:</strong> It can support millions of devices per square kilometer, essential for IoT ecosystems.</p>
-
-<p><strong>Energy Efficiency:</strong> 5G networks are designed to consume less power, improving sustainability.</p>
-
-<h3>How 5G Works</h3>
-<p>5G uses advanced technologies such as millimeter waves, small cells, and beamforming. Millimeter waves allow high-speed data transmission, while small cells ensure better coverage in densely populated areas.</p>
-
-<p>Beamforming directs signals towards specific devices instead of broadcasting in all directions, improving efficiency and reducing interference.</p>
-
-<h3>Applications of 5G</h3>
-<p>5G technology enables a wide range of applications:</p>
-
-<p>In smart cities, it supports traffic management, energy systems, and public safety. In healthcare, 5G enables remote surgeries and real-time monitoring through connected devices.</p>
-
-<p>Autonomous vehicles rely on 5G for instant communication with other vehicles and infrastructure. In entertainment, it enhances gaming and streaming experiences with ultra-low latency.</p>
-
-<p>Industries use 5G for automation, predictive maintenance, and real-time analytics.</p>
-
-<h3>Benefits of 5G</h3>
-<p>5G improves user experience with faster downloads and smoother streaming. It enables new technologies such as virtual reality and augmented reality.</p>
-
-<p>Businesses benefit from increased efficiency, reduced costs, and new opportunities for innovation. It also supports the growth of IoT and smart devices.</p>
-
-<h3>Challenges of 5G</h3>
-<p>Despite its advantages, 5G faces challenges. Infrastructure deployment is expensive and requires significant investment. High-frequency signals have limited range and may require more towers.</p>
-
-<p>Security is another concern, as increased connectivity creates more potential attack points. Additionally, there are concerns about compatibility with existing systems.</p>
-
-<h3>Future of 5G</h3>
-<p>The future of 5G is bright, with ongoing research and development aimed at improving performance and coverage. It will play a crucial role in enabling technologies like AI, IoT, and edge computing.</p>
-
-<p>As adoption increases, 5G will drive innovation across industries, creating smarter and more connected environments.</p>
-
-<h3>Conclusion</h3>
-<p>5G technology is a game-changer in wireless communication, offering unprecedented speed, connectivity, and efficiency. It is set to revolutionize industries and transform how we live and work in the digital age.</p>
-
-`
-}
-{
-title:"Cyber Security Basics",
-content:`
-<h3>Introduction</h3>
-<p>Cybersecurity protects systems, networks, and data from digital attacks.</p>
-
-<h3>Threats</h3>
-<p>Malware, phishing, ransomware, and hacking.</p>
-
-<h3>Protection</h3>
-<p>Firewalls, encryption, and secure authentication.</p>
-
-<h3>Conclusion</h3>
-<p>Cybersecurity is essential in the digital age.</p>
-`
-},
-
-{
-title:"Cloud Computing",
-content:`
-<h3>Introduction</h3>
-<p>Cloud computing provides on-demand computing resources over the internet.</p>
-
-<h3>Services</h3>
-<p>IaaS, PaaS, and SaaS models.</p>
-
-<h3>Benefits</h3>
-<p>Scalability, cost efficiency, and accessibility.</p>
-
-<h3>Conclusion</h3>
-<p>Cloud is the backbone of modern IT infrastructure.</p>
-`
-},
-
-{
-title:"Big Data",
-content:`
-<h3>Introduction</h3>
-<p>Big Data deals with massive datasets that traditional systems cannot handle.</p>
-
-<h3>Characteristics</h3>
-<p>Volume, velocity, and variety.</p>
-
-<h3>Tools</h3>
-<p>Hadoop, Spark, and NoSQL databases.</p>
-
-<h3>Conclusion</h3>
-<p>Big Data enables better decision-making.</p>
-`
-},
-
-{
-title:"Blockchain",
-content:`
-<h3>Introduction</h3>
-<p>Blockchain is a decentralized ledger technology.</p>
-
-<h3>Features</h3>
-<p>Transparency, security, and immutability.</p>
-
-<h3>Applications</h3>
-<p>Cryptocurrency, supply chain, and voting systems.</p>
-
-<h3>Conclusion</h3>
-<p>Blockchain ensures secure transactions.</p>
-`
-},
-
-{
-title:"Data Science",
-content:`
-<h3>Introduction</h3>
-<p>Data Science extracts insights from structured and unstructured data.</p>
-
-<h3>Process</h3>
-<p>Data collection, cleaning, analysis, and visualization.</p>
-
-<h3>Tools</h3>
-<p>Python, R, and SQL.</p>
-
-<h3>Conclusion</h3>
-<p>It helps organizations make data-driven decisions.</p>
-`
-},
-
-{
-title:"AI in Healthcare",
-content:`
-<h3>Introduction</h3>
-<p>AI is transforming healthcare by improving diagnosis and treatment.</p>
-
-<h3>Applications</h3>
-<p>Medical imaging, predictive analytics, and robotics.</p>
-
-<h3>Benefits</h3>
-<p>Accuracy, efficiency, and personalized care.</p>
-
-<h3>Conclusion</h3>
-<p>AI enhances healthcare outcomes.</p>
-`
-},
-
-{
-title:"Smart Cities",
-content:`
-<h3>Introduction</h3>
-<p>Smart cities use technology to improve urban living.</p>
-
-<h3>Technologies</h3>
-<p>IoT, AI, and big data.</p>
-
-<h3>Applications</h3>
-<p>Traffic management and smart energy systems.</p>
-
-<h3>Conclusion</h3>
-<p>Smart cities improve sustainability.</p>
-`
-},
-
-{
-title:"AR/VR",
-content:`
-<h3>Introduction</h3>
-<p>AR and VR create immersive digital experiences.</p>
-
-<h3>Applications</h3>
-<p>Gaming, education, and training.</p>
-
-<h3>Conclusion</h3>
-<p>They redefine user interaction.</p>
-`
-},
-
-{
-title:"Quantum Computing",
-content:`
-<h3>Introduction</h3>
-<p>Quantum computing uses qubits to solve complex problems.</p>
-
-<h3>Advantages</h3>
-<p>High-speed computation and parallel processing.</p>
-
-<h3>Conclusion</h3>
-<p>It represents the future of computing.</p>
-`
-},
-
-{
-title:"Robotics",
-content:`
-<h3>Introduction</h3>
-<p>Robotics involves designing machines that automate tasks.</p>
-
-<h3>Applications</h3>
-<p>Manufacturing, healthcare, and defense.</p>
-
-<h3>Conclusion</h3>
-<p>Robotics improves efficiency.</p>
-`
-},
-
-{
-title:"DevOps",
-content:`
-<h3>Introduction</h3>
-<p>DevOps integrates development and operations.</p>
-
-<h3>Benefits</h3>
-<p>Faster delivery and improved collaboration.</p>
-
-<h3>Conclusion</h3>
-<p>DevOps enhances software lifecycle.</p>
-`
-},
-
-{
-title:"API Basics",
-content:`
-<h3>Introduction</h3>
-<p>APIs allow communication between applications.</p>
-
-<h3>Types</h3>
-<p>REST, SOAP, and GraphQL.</p>
-
-<h3>Conclusion</h3>
-<p>APIs enable integration.</p>
-`
-},
-
-{
-title:"Web Development",
-content:`
-<h3>Introduction</h3>
-<p>Web development involves building websites.</p>
-
-<h3>Technologies</h3>
-<p>HTML, CSS, JavaScript.</p>
-
-<h3>Conclusion</h3>
-<p>It powers the internet.</p>
-`
-},
-
-{
-title:"Mobile Apps",
-content:`
-<h3>Introduction</h3>
-<p>Mobile apps run on smartphones.</p>
-
-<h3>Platforms</h3>
-<p>Android and iOS.</p>
-
-<h3>Conclusion</h3>
-<p>Apps enhance user experience.</p>
-`
-},
-
-{
-title:"Edge Computing",
-content:`
-<h3>Introduction</h3>
-<p>Edge computing processes data near the source.</p>
-
-<h3>Benefits</h3>
-<p>Reduced latency and improved performance.</p>
-
-<h3>Conclusion</h3>
-<p>It complements cloud computing.</p>
-`
-},
-
-{
-title:"AI Tools",
-content:`
-<h3>Introduction</h3>
-<p>AI tools help build intelligent systems.</p>
-
-<h3>Examples</h3>
-<p>TensorFlow, PyTorch, OpenAI APIs.</p>
-
-<h3>Conclusion</h3>
-<p>They accelerate AI development.</p>
-`
-}
-
-];
-function displayBlogs(data){
-    let container = document.getElementById("blogList");
-    container.innerHTML = "";
-
-    data.forEach((blog,i)=>{
-        container.innerHTML += `
-        <div class="card">
-            <h3>${blog.title}</h3>
-            <p>${blog.content}</p>
-            <a class="button" onclick="openBlog(${i})">Read More</a>
-        </div>`;
-    });
-}
-
-function searchBlogs(){
-    let val = document.getElementById("search").value.toLowerCase();
-    let filtered = blogs.filter(b => b.title.toLowerCase().includes(val));
-    displayBlogs(filtered);
-}
-
-function openBlog(i){
-    document.getElementById("blogList").style.display="none";
-    document.getElementById("blogView").style.display="block";
-
-    document.getElementById("title").innerText = blogs[i].title;
-    document.getElementById("content").innerText = blogs[i].content;
-}
-
-function goBack(){
-    document.getElementById("blogView").style.display="none";
-    document.getElementById("blogList").style.display="grid";
-}
-
-displayBlogs(blogs);
-
-</script>
+<div class="card">
+<h3>Machine Learning</h3>
+<p>Understand how machines learn from data.</p>
+<a href="machine-learning.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Deep Learning</h3>
+<p>Explore neural networks and advanced AI.</p>
+<a href="deep-learning.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Natural Language Processing</h3>
+<p>Learn how computers understand language.</p>
+<a href="nlp.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Computer Vision</h3>
+<p>Machines understanding images and videos.</p>
+<a href="computer-vision.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>IoT Basics</h3>
+<p>Introduction to smart connected devices.</p>
+<a href="iot-basics.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>IoT Architecture</h3>
+<p>Understand layers of IoT systems.</p>
+<a href="iot-architecture.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Arduino Projects</h3>
+<p>Build beginner hardware projects.</p>
+<a href="arduino-projects.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Raspberry Pi</h3>
+<p>Learn real-world embedded computing.</p>
+<a href="raspberry-pi.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>HTML Guide</h3>
+<p>Basics of web structure.</p>
+<a href="web-html.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>CSS Guide</h3>
+<p>Style your websites beautifully.</p>
+<a href="web-css.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<p>Add interactivity to websites.</p>
+<a href="web-javascript.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>React Basics</h3>
+<p>Modern frontend framework.</p>
+<a href="react-basics.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Node.js</h3>
+<p>Backend development with JavaScript.</p>
+<a href="nodejs.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Cloud Computing</h3>
+<p>On-demand computing services.</p>
+<a href="cloud-computing.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Big Data</h3>
+<p>Handling massive datasets.</p>
+<a href="big-data.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Hadoop</h3>
+<p>Big data processing framework.</p>
+<a href="hadoop.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>Protect systems from attacks.</p>
+<a href="cyber-security.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Blockchain</h3>
+<p>Decentralized digital ledger.</p>
+<a href="blockchain.html" class="button">Read More</a>
+</div>
+
+<div class="card">
+<h3>Edge AI</h3>
+<p>AI running on local devices.</p>
+<a href="edge-ai.html" class="button">Read More</a>
+</div>
+
+</div>
 
 </body>
 </html>
