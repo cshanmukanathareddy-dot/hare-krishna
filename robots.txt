@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cshanmukanathareddy-dot.github.io/hare-krishna/sitemap.xml
