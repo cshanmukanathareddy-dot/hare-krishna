@@ -184,28 +184,234 @@ nav a.active {
 <script>
 
 const blogs = [
-{title:"Edge AI Basics",content:"Edge AI processes data on devices without cloud dependency."},
-{title:"IoT Architecture",content:"IoT includes sensors, networks, and cloud layers."},
-{title:"Machine Learning Guide",content:"ML enables systems to learn from data."},
-{title:"5G Technology",content:"5G offers high speed and low latency."},
-{title:"Cyber Security Basics",content:"Protect systems from cyber threats."},
-{title:"Cloud Computing",content:"Cloud platforms provide scalable resources."},
-{title:"Big Data",content:"Big data handles massive datasets."},
-{title:"Blockchain",content:"Blockchain ensures secure transactions."},
-{title:"Data Science",content:"Extract insights using data analysis."},
-{title:"AI in Healthcare",content:"AI improves diagnosis and treatment."},
-{title:"Smart Cities",content:"IoT enables smart infrastructure."},
-{title:"AR/VR",content:"Creates immersive experiences."},
-{title:"Quantum Computing",content:"Solves complex problems faster."},
-{title:"Robotics",content:"Automates tasks efficiently."},
-{title:"DevOps",content:"Improves development workflow."},
-{title:"API Basics",content:"APIs connect applications."},
-{title:"Web Development",content:"Build websites using HTML CSS JS."},
-{title:"Mobile Apps",content:"Develop Android & iOS apps."},
-{title:"Edge Computing",content:"Process data near source."},
-{title:"AI Tools",content:"Modern tools for AI development."}
-];
 
+{
+title:"Edge AI Basics",
+content:`Edge AI is a revolutionary approach where artificial intelligence models are deployed directly on edge devices like smartphones, cameras, and IoT systems instead of relying on cloud servers.
+
+In traditional AI systems, data is sent to cloud servers for processing. However, this introduces latency, privacy risks, and dependency on internet connectivity. Edge AI solves these problems by enabling real-time processing directly on the device.
+
+One major advantage of Edge AI is speed. Since data is processed locally, decisions can be made instantly. This is critical in applications like autonomous vehicles, healthcare monitoring, and smart surveillance systems.
+
+Another key benefit is privacy. Sensitive data such as personal images or medical data does not need to leave the device, reducing the risk of data breaches.
+
+Edge AI is widely used in:
+- Smart cameras for face detection
+- Industrial automation systems
+- Self-driving cars
+- Wearable health devices
+
+Technologies used in Edge AI include TensorFlow Lite, OpenVINO, and NVIDIA Jetson platforms.
+
+As IoT devices continue to grow, Edge AI will play a major role in building faster, safer, and more efficient systems. It is one of the most important trends in modern technology.`
+},
+
+{
+title:"IoT Architecture",
+content:`The Internet of Things (IoT) is a system of interconnected devices that communicate and share data over the internet. IoT architecture defines how these components interact.
+
+IoT architecture is generally divided into four layers:
+
+1. Perception Layer:
+This is the physical layer consisting of sensors and devices that collect data from the environment such as temperature, humidity, and motion.
+
+2. Network Layer:
+This layer transfers data from devices to cloud servers using protocols like Wi-Fi, Bluetooth, and 5G.
+
+3. Processing Layer:
+Also known as middleware, it processes data using cloud platforms and analytics tools.
+
+4. Application Layer:
+This layer delivers services to users such as smart homes, healthcare monitoring, and smart cities.
+
+IoT architecture enables automation and real-time decision-making. For example, smart thermostats automatically adjust temperature based on user behavior.
+
+Challenges in IoT include:
+- Security risks
+- Data management
+- Device compatibility
+
+Despite challenges, IoT is transforming industries like agriculture, healthcare, and transportation.
+
+Understanding IoT architecture is essential for building scalable and efficient smart systems.`
+},
+
+{
+title:"Machine Learning Guide",
+content:`Machine Learning (ML) is a subset of artificial intelligence that allows systems to learn from data without being explicitly programmed.
+
+There are three main types of machine learning:
+
+1. Supervised Learning:
+The model learns from labeled data. Example: predicting house prices.
+
+2. Unsupervised Learning:
+The model finds patterns in unlabeled data. Example: customer segmentation.
+
+3. Reinforcement Learning:
+The model learns by interacting with an environment and receiving rewards.
+
+Machine learning involves several steps:
+- Data collection
+- Data preprocessing
+- Model training
+- Evaluation
+- Deployment
+
+Popular ML algorithms include:
+- Linear Regression
+- Decision Trees
+- Neural Networks
+
+Applications of ML:
+- Recommendation systems (Netflix, Amazon)
+- Fraud detection
+- Image recognition
+- Natural language processing
+
+Python libraries like Scikit-learn, TensorFlow, and PyTorch are widely used.
+
+Machine learning is shaping the future by enabling intelligent systems across industries.`
+},
+
+{
+title:"Cloud Computing",
+content:`Cloud computing is the delivery of computing services such as storage, servers, databases, and software over the internet.
+
+Instead of owning physical infrastructure, users can access resources on demand.
+
+There are three main types of cloud services:
+
+1. IaaS (Infrastructure as a Service):
+Provides virtual machines and storage.
+
+2. PaaS (Platform as a Service):
+Provides development platforms.
+
+3. SaaS (Software as a Service):
+Provides software applications like Gmail and Google Docs.
+
+Cloud deployment models include:
+- Public Cloud
+- Private Cloud
+- Hybrid Cloud
+
+Advantages:
+- Scalability
+- Cost efficiency
+- Accessibility
+
+Top cloud providers:
+- AWS
+- Microsoft Azure
+- Google Cloud
+
+Cloud computing is essential for modern applications and digital transformation.`
+},
+
+{
+title:"Cyber Security Basics",
+content:`Cybersecurity is the practice of protecting systems, networks, and data from cyber attacks.
+
+With increasing digitalization, cybersecurity has become crucial.
+
+Common types of cyber threats:
+- Malware
+- Phishing
+- Ransomware
+- DDoS attacks
+
+Key security principles:
+1. Confidentiality
+2. Integrity
+3. Availability
+
+Best practices:
+- Use strong passwords
+- Enable two-factor authentication
+- Keep software updated
+- Avoid suspicious links
+
+Cybersecurity tools include firewalls, antivirus software, and encryption techniques.
+
+Organizations invest heavily in cybersecurity to protect sensitive data.
+
+Cybersecurity is not just technical but also involves user awareness and training.`
+},
+
+{
+title:"Big Data",
+content:`Big Data refers to extremely large datasets that cannot be processed using traditional methods.
+
+It is defined by the 3Vs:
+- Volume
+- Velocity
+- Variety
+
+Big data technologies include:
+- Hadoop
+- Spark
+- NoSQL databases
+
+Applications:
+- Netflix recommendations
+- Amazon product suggestions
+- Fraud detection
+
+Big data analytics helps organizations make better decisions.
+
+Challenges:
+- Data storage
+- Processing speed
+- Security
+
+Big data is a key driver of innovation in modern businesses.`
+},
+
+{
+title:"Blockchain",
+content:`Blockchain is a decentralized digital ledger that records transactions securely.
+
+Each block contains data and is linked to the previous block.
+
+Features:
+- Transparency
+- Security
+- Immutability
+
+Applications:
+- Cryptocurrency (Bitcoin)
+- Supply chain
+- Voting systems
+
+Blockchain eliminates the need for intermediaries.
+
+It is considered one of the most secure technologies for data management.`
+},
+
+{
+title:"Web Development",
+content:`Web development involves creating websites and web applications.
+
+It has three main parts:
+- Frontend (HTML, CSS, JavaScript)
+- Backend (Node.js, Python, Java)
+- Database (MySQL, MongoDB)
+
+Frontend focuses on user interface.
+Backend handles logic and server operations.
+
+Modern frameworks:
+- React
+- Angular
+- Vue
+
+Web development is one of the most in-demand skills today.
+
+It enables businesses to build online presence and digital services.`
+}
+
+];
 function displayBlogs(data){
     let container = document.getElementById("blogList");
     container.innerHTML = "";
