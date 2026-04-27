@@ -163,7 +163,12 @@ function openBlog(i){
     document.getElementById("blogView").style.display="block";
 
     document.getElementById("title").innerText = blogs[i].title;
-    document.getElementById("content").innerHTML = blogs[i].content;
+
+    fetch(blogs[i].file)
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("content").innerHTML = data;
+    });
 }
 
 /* BACK */
