@@ -15,7 +15,6 @@ body {
     background: #eef2f7;
 }
 
-/* ===== NAVBAR ===== */
 header {
     background: linear-gradient(135deg, #0f172a, #1e40af);
     color: white;
@@ -23,132 +22,68 @@ header {
     padding: 20px;
 }
 
-nav a {
-    color: #cbd5f5;
-    margin: 0 12px;
-    text-decoration: none;
-}
-
-nav a.active {
-    border-bottom: 2px solid #38bdf8;
-}
-
-/* ===== TITLE ===== */
 .hero {
     text-align: center;
-    padding: 50px 20px;
-}
-
-.hero h1 {
-    color: #1e3a8a;
-}
-
-.hero p {
-    color: #475569;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* SEARCH */
-.search-box {
-    width: 50%;
-    margin: 25px auto;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #cbd5e1;
-    display: block;
-}
-
-/* ===== GRID ===== */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
     padding: 40px;
 }
 
-/* ===== CARD ===== */
+.search-box {
+    width: 50%;
+    margin: 20px auto;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    position: relative;
-    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* TOP BLUE LINE */
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 6px;
-    width: 100%;
-    background: linear-gradient(90deg, #2563eb, #38bdf8);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-/* HOVER EFFECT */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-}
-
-/* TITLE */
-.card h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-/* TEXT */
-.card p {
+.preview {
     font-size: 14px;
-    color: #475569;
+    color: #555;
+    margin-top: 10px;
 }
 
-/* BUTTON */
 .button {
-    display: inline-block;
     margin-top: 15px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #2563eb, #38bdf8);
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-}
-
-/* ===== BLOG VIEW ===== */
-#blogView {
-    display: none;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 20px;
-}
-
-.back {
-    padding: 10px;
+    display: inline-block;
+    padding: 10px 16px;
     background: #2563eb;
     color: white;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-    .search-box {
-        width: 90%;
-    }
+#blogView {
+    display: none;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+}
+
+.back {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -157,261 +92,62 @@ nav a.active {
 
 <header>
     <h2>🚀 NovaTech Hub</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="categories.html">Topics</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="contact.html">Contact</a>
-    </nav>
 </header>
 
 <section class="hero">
-    <h1>Latest Technology Blogs and Tutorials</h1>
-    <p>Explore beginner-friendly blogs on Artificial Intelligence, IoT, Cloud Computing, and modern technologies.</p>
+    <h1>Latest Blogs</h1>
 </section>
 
-<input type="text" class="search-box" id="search" placeholder="Search notes..." onkeyup="searchBlogs()">
+<input type="text" class="search-box" id="search" placeholder="Search blogs..." onkeyup="searchBlogs()">
 
 <div class="cards" id="blogList"></div>
 
 <div id="blogView">
     <button class="back" onclick="goBack()">⬅ Back</button>
     <h2 id="title"></h2>
-    <p id="content"></p>
+    <div id="content"></div>
 </div>
 
 <script>
 
+/* BLOG DATA (FULL CONTENT HERE) */
 const blogs = [
-
 {
 title:"Edge AI Basics",
-content:`Edge AI is a revolutionary approach where artificial intelligence models are deployed directly on edge devices like smartphones, cameras, and IoT systems instead of relying on cloud servers.
-
-In traditional AI systems, data is sent to cloud servers for processing. However, this introduces latency, privacy risks, and dependency on internet connectivity. Edge AI solves these problems by enabling real-time processing directly on the device.
-
-One major advantage of Edge AI is speed. Since data is processed locally, decisions can be made instantly. This is critical in applications like autonomous vehicles, healthcare monitoring, and smart surveillance systems.
-
-Another key benefit is privacy. Sensitive data such as personal images or medical data does not need to leave the device, reducing the risk of data breaches.
-
-Edge AI is widely used in:
-- Smart cameras for face detection
-- Industrial automation systems
-- Self-driving cars
-- Wearable health devices
-
-Technologies used in Edge AI include TensorFlow Lite, OpenVINO, and NVIDIA Jetson platforms.
-
-As IoT devices continue to grow, Edge AI will play a major role in building faster, safer, and more efficient systems. It is one of the most important trends in modern technology.`
-},
-
-{
-title:"IoT Architecture",
-content:`The Internet of Things (IoT) is a system of interconnected devices that communicate and share data over the internet. IoT architecture defines how these components interact.
-
-IoT architecture is generally divided into four layers:
-
-1. Perception Layer:
-This is the physical layer consisting of sensors and devices that collect data from the environment such as temperature, humidity, and motion.
-
-2. Network Layer:
-This layer transfers data from devices to cloud servers using protocols like Wi-Fi, Bluetooth, and 5G.
-
-3. Processing Layer:
-Also known as middleware, it processes data using cloud platforms and analytics tools.
-
-4. Application Layer:
-This layer delivers services to users such as smart homes, healthcare monitoring, and smart cities.
-
-IoT architecture enables automation and real-time decision-making. For example, smart thermostats automatically adjust temperature based on user behavior.
-
-Challenges in IoT include:
-- Security risks
-- Data management
-- Device compatibility
-
-Despite challenges, IoT is transforming industries like agriculture, healthcare, and transportation.
-
-Understanding IoT architecture is essential for building scalable and efficient smart systems.`
+content:`<p>Edge AI is a revolutionary approach where artificial intelligence runs directly on devices instead of cloud servers.</p>
+<p>This reduces latency and enables real-time processing, making it ideal for applications like smart cameras, autonomous vehicles, and healthcare monitoring.</p>
+<p>Unlike traditional AI systems, Edge AI improves privacy because data is processed locally.</p>
+<p>Technologies like TensorFlow Lite and NVIDIA Jetson are widely used in Edge AI.</p>
+<p>This technology is growing rapidly and is considered the future of intelligent systems.</p>`
 },
 
 {
 title:"Machine Learning Guide",
-content:`Machine Learning (ML) is a subset of artificial intelligence that allows systems to learn from data without being explicitly programmed.
-
-There are three main types of machine learning:
-
-1. Supervised Learning:
-The model learns from labeled data. Example: predicting house prices.
-
-2. Unsupervised Learning:
-The model finds patterns in unlabeled data. Example: customer segmentation.
-
-3. Reinforcement Learning:
-The model learns by interacting with an environment and receiving rewards.
-
-Machine learning involves several steps:
-- Data collection
-- Data preprocessing
-- Model training
-- Evaluation
-- Deployment
-
-Popular ML algorithms include:
-- Linear Regression
-- Decision Trees
-- Neural Networks
-
-Applications of ML:
-- Recommendation systems (Netflix, Amazon)
-- Fraud detection
-- Image recognition
-- Natural language processing
-
-Python libraries like Scikit-learn, TensorFlow, and PyTorch are widely used.
-
-Machine learning is shaping the future by enabling intelligent systems across industries.`
+content:`<p>Machine Learning allows systems to learn from data and improve automatically.</p>
+<p>There are three main types: supervised, unsupervised, and reinforcement learning.</p>
+<p>ML is used in recommendation systems, fraud detection, and AI chatbots.</p>
+<p>Popular tools include Python, TensorFlow, and Scikit-learn.</p>
+<p>Machine learning is one of the most important technologies today.</p>`
 },
 
 {
 title:"Cloud Computing",
-content:`Cloud computing is the delivery of computing services such as storage, servers, databases, and software over the internet.
-
-Instead of owning physical infrastructure, users can access resources on demand.
-
-There are three main types of cloud services:
-
-1. IaaS (Infrastructure as a Service):
-Provides virtual machines and storage.
-
-2. PaaS (Platform as a Service):
-Provides development platforms.
-
-3. SaaS (Software as a Service):
-Provides software applications like Gmail and Google Docs.
-
-Cloud deployment models include:
-- Public Cloud
-- Private Cloud
-- Hybrid Cloud
-
-Advantages:
-- Scalability
-- Cost efficiency
-- Accessibility
-
-Top cloud providers:
-- AWS
-- Microsoft Azure
-- Google Cloud
-
-Cloud computing is essential for modern applications and digital transformation.`
-},
-
-{
-title:"Cyber Security Basics",
-content:`Cybersecurity is the practice of protecting systems, networks, and data from cyber attacks.
-
-With increasing digitalization, cybersecurity has become crucial.
-
-Common types of cyber threats:
-- Malware
-- Phishing
-- Ransomware
-- DDoS attacks
-
-Key security principles:
-1. Confidentiality
-2. Integrity
-3. Availability
-
-Best practices:
-- Use strong passwords
-- Enable two-factor authentication
-- Keep software updated
-- Avoid suspicious links
-
-Cybersecurity tools include firewalls, antivirus software, and encryption techniques.
-
-Organizations invest heavily in cybersecurity to protect sensitive data.
-
-Cybersecurity is not just technical but also involves user awareness and training.`
-},
-
-{
-title:"Big Data",
-content:`Big Data refers to extremely large datasets that cannot be processed using traditional methods.
-
-It is defined by the 3Vs:
-- Volume
-- Velocity
-- Variety
-
-Big data technologies include:
-- Hadoop
-- Spark
-- NoSQL databases
-
-Applications:
-- Netflix recommendations
-- Amazon product suggestions
-- Fraud detection
-
-Big data analytics helps organizations make better decisions.
-
-Challenges:
-- Data storage
-- Processing speed
-- Security
-
-Big data is a key driver of innovation in modern businesses.`
-},
-
-{
-title:"Blockchain",
-content:`Blockchain is a decentralized digital ledger that records transactions securely.
-
-Each block contains data and is linked to the previous block.
-
-Features:
-- Transparency
-- Security
-- Immutability
-
-Applications:
-- Cryptocurrency (Bitcoin)
-- Supply chain
-- Voting systems
-
-Blockchain eliminates the need for intermediaries.
-
-It is considered one of the most secure technologies for data management.`
-},
-
-{
-title:"Web Development",
-content:`Web development involves creating websites and web applications.
-
-It has three main parts:
-- Frontend (HTML, CSS, JavaScript)
-- Backend (Node.js, Python, Java)
-- Database (MySQL, MongoDB)
-
-Frontend focuses on user interface.
-Backend handles logic and server operations.
-
-Modern frameworks:
-- React
-- Angular
-- Vue
-
-Web development is one of the most in-demand skills today.
-
-It enables businesses to build online presence and digital services.`
+content:`<p>Cloud computing provides computing services over the internet instead of local systems.</p>
+<p>It includes services like storage, servers, and databases.</p>
+<p>Popular cloud providers include AWS, Azure, and Google Cloud.</p>
+<p>Cloud computing is scalable, cost-effective, and flexible.</p>
+<p>It plays a key role in modern digital applications.</p>`
 }
 
 ];
+
+/* SHOW PREVIEW ONLY */
+function getPreview(html){
+    let text = html.replace(/<[^>]+>/g, ""); // remove HTML tags
+    return text.substring(0,120) + "...";
+}
+
+/* DISPLAY BLOGS */
 function displayBlogs(data){
     let container = document.getElementById("blogList");
     container.innerHTML = "";
@@ -420,31 +156,35 @@ function displayBlogs(data){
         container.innerHTML += `
         <div class="card">
             <h3>${blog.title}</h3>
-            <p>${blog.content}</p>
-            <a class="button" onclick="openBlog(${i})">Read More</a>
+            <p class="preview">${getPreview(blog.content)}</p>
+            <div class="button" onclick="openBlog(${i})">Read More</div>
         </div>`;
     });
 }
 
+/* SEARCH */
 function searchBlogs(){
     let val = document.getElementById("search").value.toLowerCase();
     let filtered = blogs.filter(b => b.title.toLowerCase().includes(val));
     displayBlogs(filtered);
 }
 
+/* OPEN FULL BLOG */
 function openBlog(i){
     document.getElementById("blogList").style.display="none";
     document.getElementById("blogView").style.display="block";
 
     document.getElementById("title").innerText = blogs[i].title;
-    document.getElementById("content").innerText = blogs[i].content;
+    document.getElementById("content").innerHTML = blogs[i].content;
 }
 
+/* BACK */
 function goBack(){
     document.getElementById("blogView").style.display="none";
     document.getElementById("blogList").style.display="grid";
 }
 
+/* INIT */
 displayBlogs(blogs);
 
 </script>
