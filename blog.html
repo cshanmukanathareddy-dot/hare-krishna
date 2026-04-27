@@ -184,28 +184,355 @@ nav a.active {
 <script>
 
 const blogs = [
-{title:"Edge AI Basics",content:"Edge AI processes data on devices without cloud dependency."},
-{title:"IoT Architecture",content:"IoT includes sensors, networks, and cloud layers."},
-{title:"Machine Learning Guide",content:"ML enables systems to learn from data."},
-{title:"5G Technology",content:"5G offers high speed and low latency."},
-{title:"Cyber Security Basics",content:"Protect systems from cyber threats."},
-{title:"Cloud Computing",content:"Cloud platforms provide scalable resources."},
-{title:"Big Data",content:"Big data handles massive datasets."},
-{title:"Blockchain",content:"Blockchain ensures secure transactions."},
-{title:"Data Science",content:"Extract insights using data analysis."},
-{title:"AI in Healthcare",content:"AI improves diagnosis and treatment."},
-{title:"Smart Cities",content:"IoT enables smart infrastructure."},
-{title:"AR/VR",content:"Creates immersive experiences."},
-{title:"Quantum Computing",content:"Solves complex problems faster."},
-{title:"Robotics",content:"Automates tasks efficiently."},
-{title:"DevOps",content:"Improves development workflow."},
-{title:"API Basics",content:"APIs connect applications."},
-{title:"Web Development",content:"Build websites using HTML CSS JS."},
-{title:"Mobile Apps",content:"Develop Android & iOS apps."},
-{title:"Edge Computing",content:"Process data near source."},
-{title:"AI Tools",content:"Modern tools for AI development."}
+
+{
+title: "Edge AI Basics",
+content: `
+<h3>Introduction</h3>
+<p>Edge AI is a revolutionary technology that enables artificial intelligence models to run directly on local devices such as smartphones, IoT devices, cameras, and embedded systems. Unlike traditional AI systems that rely heavily on cloud computing, Edge AI processes data locally, making systems faster, more secure, and efficient.</p>
+
+<h3>How Edge AI Works</h3>
+<p>Edge AI works by deploying trained machine learning models directly onto hardware devices. These devices collect data through sensors and process it instantly without sending it to a remote server. This reduces latency and ensures real-time decision-making.</p>
+
+<h3>Advantages of Edge AI</h3>
+<p>One major advantage is low latency. Since data is processed locally, there is no delay caused by sending data to the cloud. This is crucial in applications like self-driving cars and industrial automation.</p>
+
+<p>Another advantage is privacy. Sensitive data remains on the device, reducing the risk of data breaches. This is particularly important in healthcare and finance.</p>
+
+<p>Edge AI also reduces bandwidth usage since less data is transmitted over the internet.</p>
+
+<h3>Applications</h3>
+<p>Edge AI is widely used in smart homes, surveillance systems, healthcare devices, and autonomous vehicles. For example, security cameras can detect unusual activity without cloud processing.</p>
+
+<h3>Challenges</h3>
+<p>Despite its advantages, Edge AI faces challenges such as limited processing power and energy constraints. Developers must optimize models to run efficiently on small devices.</p>
+
+<h3>Future Scope</h3>
+<p>The future of Edge AI is promising with advancements in AI chips and hardware acceleration. It will play a key role in smart cities, robotics, and IoT ecosystems.</p>
+
+<p>In conclusion, Edge AI is transforming how AI systems operate by bringing intelligence closer to the data source, enabling faster and more secure processing.</p>
+`
+},
+
+{
+title: "IoT Architecture",
+content: `
+<h3>Introduction</h3>
+<p>The Internet of Things (IoT) architecture is a framework that connects physical devices, sensors, networks, and cloud systems to enable communication and automation. It plays a crucial role in building smart systems.</p>
+
+<h3>Layers of IoT</h3>
+<p>IoT architecture consists of multiple layers:</p>
+
+<h3>1. Perception Layer</h3>
+<p>This layer includes sensors and devices that collect data from the environment such as temperature, motion, and humidity.</p>
+
+<h3>2. Network Layer</h3>
+<p>This layer transfers data from devices to servers using technologies like Wi-Fi, Bluetooth, and 5G.</p>
+
+<h3>3. Processing Layer</h3>
+<p>Also known as the middleware layer, it processes and stores data using cloud platforms.</p>
+
+<h3>4. Application Layer</h3>
+<p>This layer delivers services to users such as smart homes, healthcare systems, and industrial automation.</p>
+
+<h3>Benefits</h3>
+<p>IoT improves efficiency, reduces human effort, and enables real-time monitoring.</p>
+
+<h3>Applications</h3>
+<p>IoT is used in smart cities, agriculture, healthcare, and transportation.</p>
+
+<h3>Challenges</h3>
+<p>Security and data privacy remain major concerns in IoT systems.</p>
+
+<h3>Conclusion</h3>
+<p>IoT architecture is essential for building connected systems that improve quality of life and industrial productivity.</p>
+`
+}
 ];
 
+{
+title:"Machine Learning Guide",
+content:`
+<h3>Introduction</h3>
+<p>Machine Learning (ML) enables systems to learn from data and improve performance without explicit programming.</p>
+
+<h3>Types</h3>
+<p>Supervised, unsupervised, and reinforcement learning.</p>
+
+<h3>Applications</h3>
+<p>Used in recommendation systems, fraud detection, and speech recognition.</p>
+
+<h3>Benefits</h3>
+<p>Automation, accuracy, and predictive insights.</p>
+
+<h3>Conclusion</h3>
+<p>ML is a core component of modern AI systems.</p>
+`
+},
+
+{
+title:"5G Technology",
+content:`
+<h3>Introduction</h3>
+<p>5G is the fifth generation of wireless technology offering high speed and low latency.</p>
+
+<h3>Features</h3>
+<p>Ultra-fast data rates, low latency, and high device connectivity.</p>
+
+<h3>Applications</h3>
+<p>Smart cities, autonomous vehicles, and IoT networks.</p>
+
+<h3>Conclusion</h3>
+<p>5G is transforming communication and enabling next-gen technologies.</p>
+`
+},
+
+{
+title:"Cyber Security Basics",
+content:`
+<h3>Introduction</h3>
+<p>Cybersecurity protects systems, networks, and data from digital attacks.</p>
+
+<h3>Threats</h3>
+<p>Malware, phishing, ransomware, and hacking.</p>
+
+<h3>Protection</h3>
+<p>Firewalls, encryption, and secure authentication.</p>
+
+<h3>Conclusion</h3>
+<p>Cybersecurity is essential in the digital age.</p>
+`
+},
+
+{
+title:"Cloud Computing",
+content:`
+<h3>Introduction</h3>
+<p>Cloud computing provides on-demand computing resources over the internet.</p>
+
+<h3>Services</h3>
+<p>IaaS, PaaS, and SaaS models.</p>
+
+<h3>Benefits</h3>
+<p>Scalability, cost efficiency, and accessibility.</p>
+
+<h3>Conclusion</h3>
+<p>Cloud is the backbone of modern IT infrastructure.</p>
+`
+},
+
+{
+title:"Big Data",
+content:`
+<h3>Introduction</h3>
+<p>Big Data deals with massive datasets that traditional systems cannot handle.</p>
+
+<h3>Characteristics</h3>
+<p>Volume, velocity, and variety.</p>
+
+<h3>Tools</h3>
+<p>Hadoop, Spark, and NoSQL databases.</p>
+
+<h3>Conclusion</h3>
+<p>Big Data enables better decision-making.</p>
+`
+},
+
+{
+title:"Blockchain",
+content:`
+<h3>Introduction</h3>
+<p>Blockchain is a decentralized ledger technology.</p>
+
+<h3>Features</h3>
+<p>Transparency, security, and immutability.</p>
+
+<h3>Applications</h3>
+<p>Cryptocurrency, supply chain, and voting systems.</p>
+
+<h3>Conclusion</h3>
+<p>Blockchain ensures secure transactions.</p>
+`
+},
+
+{
+title:"Data Science",
+content:`
+<h3>Introduction</h3>
+<p>Data Science extracts insights from structured and unstructured data.</p>
+
+<h3>Process</h3>
+<p>Data collection, cleaning, analysis, and visualization.</p>
+
+<h3>Tools</h3>
+<p>Python, R, and SQL.</p>
+
+<h3>Conclusion</h3>
+<p>It helps organizations make data-driven decisions.</p>
+`
+},
+
+{
+title:"AI in Healthcare",
+content:`
+<h3>Introduction</h3>
+<p>AI is transforming healthcare by improving diagnosis and treatment.</p>
+
+<h3>Applications</h3>
+<p>Medical imaging, predictive analytics, and robotics.</p>
+
+<h3>Benefits</h3>
+<p>Accuracy, efficiency, and personalized care.</p>
+
+<h3>Conclusion</h3>
+<p>AI enhances healthcare outcomes.</p>
+`
+},
+
+{
+title:"Smart Cities",
+content:`
+<h3>Introduction</h3>
+<p>Smart cities use technology to improve urban living.</p>
+
+<h3>Technologies</h3>
+<p>IoT, AI, and big data.</p>
+
+<h3>Applications</h3>
+<p>Traffic management and smart energy systems.</p>
+
+<h3>Conclusion</h3>
+<p>Smart cities improve sustainability.</p>
+`
+},
+
+{
+title:"AR/VR",
+content:`
+<h3>Introduction</h3>
+<p>AR and VR create immersive digital experiences.</p>
+
+<h3>Applications</h3>
+<p>Gaming, education, and training.</p>
+
+<h3>Conclusion</h3>
+<p>They redefine user interaction.</p>
+`
+},
+
+{
+title:"Quantum Computing",
+content:`
+<h3>Introduction</h3>
+<p>Quantum computing uses qubits to solve complex problems.</p>
+
+<h3>Advantages</h3>
+<p>High-speed computation and parallel processing.</p>
+
+<h3>Conclusion</h3>
+<p>It represents the future of computing.</p>
+`
+},
+
+{
+title:"Robotics",
+content:`
+<h3>Introduction</h3>
+<p>Robotics involves designing machines that automate tasks.</p>
+
+<h3>Applications</h3>
+<p>Manufacturing, healthcare, and defense.</p>
+
+<h3>Conclusion</h3>
+<p>Robotics improves efficiency.</p>
+`
+},
+
+{
+title:"DevOps",
+content:`
+<h3>Introduction</h3>
+<p>DevOps integrates development and operations.</p>
+
+<h3>Benefits</h3>
+<p>Faster delivery and improved collaboration.</p>
+
+<h3>Conclusion</h3>
+<p>DevOps enhances software lifecycle.</p>
+`
+},
+
+{
+title:"API Basics",
+content:`
+<h3>Introduction</h3>
+<p>APIs allow communication between applications.</p>
+
+<h3>Types</h3>
+<p>REST, SOAP, and GraphQL.</p>
+
+<h3>Conclusion</h3>
+<p>APIs enable integration.</p>
+`
+},
+
+{
+title:"Web Development",
+content:`
+<h3>Introduction</h3>
+<p>Web development involves building websites.</p>
+
+<h3>Technologies</h3>
+<p>HTML, CSS, JavaScript.</p>
+
+<h3>Conclusion</h3>
+<p>It powers the internet.</p>
+`
+},
+
+{
+title:"Mobile Apps",
+content:`
+<h3>Introduction</h3>
+<p>Mobile apps run on smartphones.</p>
+
+<h3>Platforms</h3>
+<p>Android and iOS.</p>
+
+<h3>Conclusion</h3>
+<p>Apps enhance user experience.</p>
+`
+},
+
+{
+title:"Edge Computing",
+content:`
+<h3>Introduction</h3>
+<p>Edge computing processes data near the source.</p>
+
+<h3>Benefits</h3>
+<p>Reduced latency and improved performance.</p>
+
+<h3>Conclusion</h3>
+<p>It complements cloud computing.</p>
+`
+},
+
+{
+title:"AI Tools",
+content:`
+<h3>Introduction</h3>
+<p>AI tools help build intelligent systems.</p>
+
+<h3>Examples</h3>
+<p>TensorFlow, PyTorch, OpenAI APIs.</p>
+
+<h3>Conclusion</h3>
+<p>They accelerate AI development.</p>
+`
+}
+
+];
 function displayBlogs(data){
     let container = document.getElementById("blogList");
     container.innerHTML = "";
