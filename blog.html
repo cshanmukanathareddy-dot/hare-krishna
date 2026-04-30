@@ -214,18 +214,67 @@ nav a.active {
 function openPost(topic) {
 
 let data = {
-solar: ["Solar System", "The solar system consists of the Sun and everything bound to it by gravity."],
-blackhole: ["Black Holes", "Black holes are extremely dense objects with gravity so strong nothing escapes."],
-galaxy: ["Stars & Galaxies", "Galaxies contain billions of stars, gas, and dust."],
-missions: ["Space Missions", "Missions explore planets using advanced spacecraft."],
-astro: ["Astrobiology", "Study of life beyond Earth."],
-telescope: ["Telescopes", "Devices used to observe distant space objects."],
-dark: ["Dark Matter", "Invisible matter that makes up most of the universe."],
-satellite: ["Satellites", "Objects placed in orbit for communication and observation."],
-earth: ["Earth from Space", "Our planet looks blue due to water coverage."],
-mars: ["Mars Exploration", "Mars is the most explored planet after Earth."],
-exo: ["Exoplanets", "Planets that orbit stars outside our solar system."],
-moon: ["Moon Missions", "Humans first landed on the Moon in 1969."]
+
+solar: [
+"Solar System",
+"The solar system is made up of the Sun, eight planets, their moons, and countless smaller objects like asteroids and comets. It formed about 4.6 billion years ago from a giant cloud of gas and dust. Each planet has unique characteristics—Mercury is closest to the Sun, while Neptune is the farthest. Earth is the only known planet that supports life. Scientists study the solar system to understand planetary formation and the possibility of life beyond Earth."
+],
+
+blackhole: [
+"Black Holes",
+"Black holes are incredibly dense regions in space where gravity is so strong that nothing—not even light—can escape. They are formed when massive stars collapse under their own gravity at the end of their life cycle. At the center lies a singularity, surrounded by an event horizon. Black holes can vary in size, from small stellar ones to supermassive giants found at the center of galaxies. Studying them helps scientists understand gravity, space-time, and the limits of physics."
+],
+
+galaxy: [
+"Stars & Galaxies",
+"Galaxies are vast systems containing billions of stars, planets, gas, and dust held together by gravity. Our galaxy, the Milky Way, is just one of billions in the universe. Stars are born in nebulae and evolve over millions or billions of years. Some end as white dwarfs, while massive ones explode as supernovae. Understanding galaxies helps scientists learn how the universe formed and evolved over time."
+],
+
+missions: [
+"Space Missions",
+"Space missions are scientific explorations carried out using spacecraft to study planets, moons, and deep space. Organizations like NASA, ISRO, and SpaceX have launched missions to Mars, the Moon, and beyond. These missions collect data, capture images, and test new technologies. Famous missions include Apollo (Moon landing), Mars rovers, and the James Webb Space Telescope. Space missions expand our knowledge and bring us closer to becoming an interplanetary species."
+],
+
+astro: [
+"Astrobiology",
+"Astrobiology is the study of life beyond Earth and the conditions that make life possible. Scientists explore extreme environments on Earth to understand how life might survive elsewhere. They search for signs of life on Mars, icy moons like Europa, and distant exoplanets. This field combines biology, chemistry, and astronomy to answer one of humanity’s biggest questions: Are we alone in the universe?"
+],
+
+telescope: [
+"Telescopes",
+"Telescopes are powerful instruments that allow us to observe distant objects in space. Optical telescopes collect visible light, while radio telescopes detect radio waves. Space telescopes like Hubble and James Webb provide clearer images without atmospheric distortion. Telescopes help scientists study stars, galaxies, and cosmic events, enabling discoveries that expand our understanding of the universe."
+],
+
+dark: [
+"Dark Matter",
+"Dark matter is a mysterious substance that makes up about 27% of the universe, yet it cannot be seen directly. Scientists know it exists because of its gravitational effects on galaxies and cosmic structures. Unlike normal matter, dark matter does not emit or reflect light. Understanding dark matter is one of the biggest challenges in modern physics and could reveal new insights about the universe."
+],
+
+satellite: [
+"Satellites",
+"Satellites are objects placed in orbit around Earth or other celestial bodies. They are used for communication, weather monitoring, navigation (GPS), and scientific research. Some satellites are natural, like the Moon, while others are artificial, launched by humans. Satellites play a crucial role in modern life, enabling global communication and helping us study Earth and space."
+],
+
+earth: [
+"Earth from Space",
+"From space, Earth appears as a beautiful blue planet due to its vast oceans. It is the only known planet that supports life, thanks to its atmosphere, water, and suitable temperature. Observing Earth from space helps scientists monitor climate change, weather patterns, and natural disasters. It also reminds us of the importance of protecting our planet."
+],
+
+mars: [
+"Mars Exploration",
+"Mars is one of the most studied planets in our solar system and is considered a potential future home for humans. Missions like NASA’s Perseverance rover explore its surface for signs of past life. Mars has a thin atmosphere, cold temperatures, and evidence of ancient water. Scientists hope to send humans to Mars in the coming decades."
+],
+
+exo: [
+"Exoplanets",
+"Exoplanets are planets that orbit stars outside our solar system. Thousands have been discovered, some of which may be similar to Earth. Scientists study exoplanets to understand planetary systems and search for habitable worlds. Advanced telescopes help detect these distant planets by observing changes in starlight."
+],
+
+moon: [
+"Moon Missions",
+"The Moon has been a key target for space exploration. The Apollo missions successfully landed humans on the Moon in 1969. Today, new missions aim to establish a permanent presence there. The Moon is important for studying space conditions and may serve as a base for future missions to Mars and beyond."
+]
+
 };
 
 document.getElementById("modal-title").innerText = data[topic][0];
