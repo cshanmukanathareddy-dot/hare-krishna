@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NovaTech Hub Blogs</title>
+<title>Cosmic Insights Blog</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -12,35 +12,48 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #eef2f7;
+    background: radial-gradient(circle at top, #020617, #0f172a);
+    color: #e2e8f0;
 }
 
 /* NAVBAR */
 header {
-    background: linear-gradient(135deg, #0f172a, #1e40af);
+    background: rgba(2, 6, 23, 0.9);
+    backdrop-filter: blur(10px);
     color: white;
     text-align: center;
     padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav a {
-    color: #cbd5f5;
+    color: #94a3b8;
     margin: 0 12px;
     text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #1e40af;
+    color: white;
 }
 
 nav a.active {
-    border-bottom: 2px solid #38bdf8;
+    background: #38bdf8;
+    color: #020617;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
 .hero h1 {
-    color: #1e3a8a;
+    color: #38bdf8;
+    font-size: 32px;
 }
 
 /* GRID */
@@ -53,27 +66,34 @@ nav a.active {
 
 /* CARD */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.05);
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 18px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     transition: 0.3s;
+    backdrop-filter: blur(10px);
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
 }
 
 /* BUTTON */
 .button {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, #2563eb, #38bdf8);
-    color: white;
-    border-radius: 10px;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: #020617;
+    border-radius: 50px;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #0ea5e9;
 }
 
 </style>
@@ -82,7 +102,7 @@ nav a.active {
 <body>
 
 <header>
-    <h2>🚀 NovaTech Hub</h2>
+    <h2>🌌 Cosmic Insights</h2>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -93,130 +113,82 @@ nav a.active {
 </header>
 
 <section class="hero">
-    <h1>Latest Technology Topics</h1>
+    <h1>Explore the Wonders of the Universe</h1>
 </section>
 
-<!-- ✅ CARDS -->
+<!-- CARDS -->
 <div class="cards">
 
 <div class="card">
-<h3>AI Basics</h3>
-<p>Learn fundamentals of Artificial Intelligence.</p>
-<a href="ai-basics.html" class="button">Read More</a>
+<h3>🪐 Solar System</h3>
+<p>Discover planets, moons, and our cosmic neighborhood.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Machine Learning</h3>
-<p>Understand how machines learn from data.</p>
-<a href="machine-learning.html" class="button">Read More</a>
+<h3>🌑 Black Holes</h3>
+<p>Understand the most mysterious objects in space.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Deep Learning</h3>
-<p>Explore neural networks and advanced AI.</p>
-<a href="deep-learning.html" class="button">Read More</a>
+<h3>🌠 Stars & Galaxies</h3>
+<p>Learn how stars are born and galaxies evolve.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Natural Language Processing</h3>
-<p>Learn how computers understand language.</p>
-<a href="nlp.html" class="button">Read More</a>
+<h3>🚀 Space Missions</h3>
+<p>Explore NASA, SpaceX, and interplanetary travel.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Computer Vision</h3>
-<p>Machines understanding images and videos.</p>
-<a href="computer-vision.html" class="button">Read More</a>
+<h3>👽 Astrobiology</h3>
+<p>Is there life beyond Earth? Explore possibilities.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>IoT Basics</h3>
-<p>Introduction to smart connected devices.</p>
-<a href="iot-basics.html" class="button">Read More</a>
+<h3>🔭 Telescopes</h3>
+<p>How we observe distant stars and galaxies.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>IoT Architecture</h3>
-<p>Understand layers of IoT systems.</p>
-<a href="iot-architecture.html" class="button">Read More</a>
+<h3>🌌 Dark Matter</h3>
+<p>The invisible force shaping the universe.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Arduino Projects</h3>
-<p>Build beginner hardware projects.</p>
-<a href="arduino-projects.html" class="button">Read More</a>
+<h3>🛰️ Satellites</h3>
+<p>Technology orbiting Earth and beyond.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>Raspberry Pi</h3>
-<p>Learn real-world embedded computing.</p>
-<a href="raspberry-pi.html" class="button">Read More</a>
+<h3>🌍 Earth from Space</h3>
+<p>See our planet like never before.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>HTML Guide</h3>
-<p>Basics of web structure.</p>
-<a href="web-html.html" class="button">Read More</a>
+<h3>🚀 Mars Exploration</h3>
+<p>Humanity’s journey to the red planet.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>CSS Guide</h3>
-<p>Style your websites beautifully.</p>
-<a href="web-css.html" class="button">Read More</a>
+<h3>🪐 Exoplanets</h3>
+<p>Planets beyond our solar system.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 <div class="card">
-<h3>JavaScript</h3>
-<p>Add interactivity to websites.</p>
-<a href="web-javascript.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>React Basics</h3>
-<p>Modern frontend framework.</p>
-<a href="react-basics.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Node.js</h3>
-<p>Backend development with JavaScript.</p>
-<a href="nodejs.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Cloud Computing</h3>
-<p>On-demand computing services.</p>
-<a href="cloud-computing.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Big Data</h3>
-<p>Handling massive datasets.</p>
-<a href="big-data.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Hadoop</h3>
-<p>Big data processing framework.</p>
-<a href="hadoop.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Cyber Security</h3>
-<p>Protect systems from attacks.</p>
-<a href="cyber-security.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Blockchain</h3>
-<p>Decentralized digital ledger.</p>
-<a href="blockchain.html" class="button">Read More</a>
-</div>
-
-<div class="card">
-<h3>Edge AI</h3>
-<p>AI running on local devices.</p>
-<a href="edge-ai.html" class="button">Read More</a>
+<h3>🌙 Moon Missions</h3>
+<p>Past and future lunar explorations.</p>
+<a href="#" class="button">Read More</a>
 </div>
 
 </div>
